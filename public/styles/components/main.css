@@ -18,22 +18,6 @@
     font-size: 3rem;
 }
 
-.content__main > div {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-
-    padding-bottom: 1.3rem;
-    border-bottom: 1px solid rgb(182, 182, 182);
-}
-
-.content__main > div > h2 {
-    margin: 1.6rem 0;
-}
-
-.content__main > div > p {
-    line-height: 1.6;
-}
 
 @media (max-width: 1223px) {
     .content__main {
