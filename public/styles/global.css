@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Roboto', 'sans-serif';
+}
+
+@media(max-width: 1080px) {
+    html {
+      font-size: 93.75%; /* 15px */
+    }
+  }
+  
+  @media(max-width: 992px) {
+    html {
+      font-size: 87.5%; /* 14px */
+    }
+  }
+  
+  @media(max-width:700px) {
+    html {
+      font-size: 75%; /* 12px */
+    }
+  }
+  
+  @media(max-width: 590px) {
+    html {
+      font-size: 62.25%; /* 10px */
+    }
+  }
