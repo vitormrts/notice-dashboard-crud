@@ -61,7 +61,26 @@
     }
 }
 
+@media (max-width: 702px) {
+    .content__header {
+        min-height: 125px;
+        max-height: 125px;
+    }
+}
+
+@media (max-width: 592px) {
+    .content__header {
+        min-height: 115px;
+        max-height: 115px;
+    }
+}
+
 @media (max-width: 499px) {
+    .content__header {
+        min-height: 100px;
+        max-height: 100px;
+    }
+
     .content__header > div {
         width: 96%;
     }
