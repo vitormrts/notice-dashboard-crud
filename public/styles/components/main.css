@@ -10,6 +10,18 @@
     
 }
 
+.content__top {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.content__top a {
+    margin-top: 3.5rem;
+    margin-right: 1rem;
+    width: 30px;
+}
+
 .content__main h1 {
     color: #2D9CDB;
 
@@ -17,7 +29,6 @@
 
     font-size: 3rem;
 }
-
 
 @media (max-width: 1223px) {
     .content__main {

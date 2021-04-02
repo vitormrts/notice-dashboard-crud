@@ -11,6 +11,18 @@
     margin: 1.6rem 0;
 }
 
+.content__title a {
+    text-decoration: none;
+
+    color: #2D9CDB;
+
+    transition: 0.4s;
+}
+
+.content__title :hover {
+    color: #2b6a8f;
+}
+
 .content__description {
     line-height: 1.6;
 }

@@ -17,97 +17,31 @@
     <title>Notice</title>
 </head>
 <body>
-    <h1>Notice</h1>
+    <div class="content__top">
+        <a href="/"><img src="/public/assets/left-arrow.svg" alt="Back"></a>
+        <h1>Notice</h1>
+    </div>
 
     <div class="content__notice">
-        <h2 class="content__title">Lorem ipsum</h2>
+        <h2 class="content__title">{{ title }}</h2>
         <p class="content__description"> 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent arcu dui, rhoncus rutrum consectetur porttitor, maximus quis ante. Pellentesque ex arcu, rutrum id scelerisque eget, sollicitudin eu diam. Suspendisse finibus quam ligula, a dignissim ipsum ultricies sed. Praesent ultricies nibh sit amet magna consequat consequat. Mauris a pellentesque nunc, ut pulvinar augue. Fusce fringilla sed felis nec ultricies. Aliquam elit felis, accumsan eu ornare nec, rhoncus nec ante. Aenean tristique lorem ut nisl rhoncus fermentum. Mauris mattis nisi vel nulla dignissim ultrices. Nunc tincidunt dolor velit, a consectetur leo efficitur eu. Vestibulum eget lacus nec odio viverra luctus. Fusce ac urna sit amet erat placerat mollis quis vitae turpis. Nunc ante leo, rutrum dictum risus sit amet, porta hendrerit elit.
-            <br>
-            Mauris eget sodales ex, eget tempus leo. Donec scelerisque, turpis non dapibus fringilla, tortor ante finibus tortor, consequat auctor felis est nec ante. Etiam libero libero, pretium eget quam vitae, sollicitudin pulvinar ex. Etiam fringilla justo augue, nec vulputate justo ultricies sit amet. Nullam tincidunt lobortis dui id consequat. Praesent ullamcorper odio mauris, quis tincidunt arcu facilisis nec. Fusce mattis placerat leo, in maximus leo molestie et.
-            <br>
-            Aenean ut diam fermentum, tincidunt nibh sed, facilisis orci. In molestie nec augue vel tempor. Vivamus ac risus ipsum. Quisque facilisis elit ut lectus volutpat, in maximus tellus bibendum. Donec eu suscipit massa, in commodo lacus. Duis mollis molestie diam, non pretium odio vulputate eu. Duis ac rutrum tellus. Suspendisse finibus pretium pretium. Proin vitae metus maximus, pulvinar eros ut, bibendum neque. Quisque commodo dignissim massa ac molestie. Donec in nulla luctus, varius mauris eget, luctus dolor.
-            <br>
-            Quisque bibendum dolor enim, eu feugiat tellus eleifend maximus. Praesent id euismod ex, in gravida est. Integer nec laoreet quam. Proin blandit purus ligula, eget hendrerit mauris dignissim sodales. Aliquam sit amet facilisis tortor. Ut lobortis, sem quis bibendum commodo, diam felis convallis sem, eu feugiat elit augue egestas mi. Phasellus rutrum turpis ac ligula iaculis, vel dignissim felis ultrices. Vivamus condimentum magna non arcu elementum consequat. Nullam scelerisque nisl placerat pellentesque semper. Pellentesque id iaculis lacus. Ut ut dolor iaculis, congue massa pellentesque, luctus elit. Proin viverra sapien non imperdiet vehicula. Maecenas eu felis odio. Integer eget odio vel felis feugiat ullamcorper. 
+            {{ description }}
         </p>
     </div>
 
     <h1>Comments</h1>
 
-    <div class="content__comment">
-        <h2 class="content__name">Vitor Martins Cruz</h2>
-        <p class="content__text">
-            Mauris eget sodales ex, eget tempus leo. Donec scelerisque, turpis non dapibus fringilla, tortor ante finibus tortor, consequat auctor felis est nec ante. Etiam libero libero, pretium eget quam vitae, sollicitudin pulvinar ex. Etiam fringilla justo augue, nec vulputate justo ultricies sit amet. Nullam tincidunt lobortis dui id consequat. Praesent ullamcorper odio mauris, quis tincidunt arcu facilisis nec. Fusce mattis placerat leo, in maximus leo molestie et.
-        </p>
-    </div>
+    {% if comments == 'This notice has no comments.' %}
+        <p>This notice has no comments.</p>
+    {% else %}
+        {% for comment in comments %}
+            <div class="content__comment">
+                <h2 class="content__name">{{ comment.getName() }}</h2>
+                <p class="content__text">{{ comment.getMsg() }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
 
-    <div class="content__comment">
-        <h2 class="content__name">Lucas da Silva</h2>
-        <p class="content__text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent arcu dui, rhoncus rutrum consectetur porttitor, maximus quis ante. Pellentesque ex arcu, rutrum id scelerisque eget, sollicitudin eu diam. Suspendisse finibus quam ligula, a dignissim ipsum ultricies sed. Praesent ultricies nibh sit amet magna consequat consequat. Mauris a pellentesque nunc, ut pulvinar augue. Fusce fringilla sed felis nec ultricies. Aliquam elit felis, accumsan eu ornare nec, rhoncus nec ante. Aenean tristique lorem ut nisl rhoncus fermentum. Mauris mattis nisi vel nulla dignissim ultrices. Nunc tincidunt dolor velit, a consectetur leo efficitur eu. Vestibulum eget lacus nec odio viverra luctus. Fusce ac urna sit amet erat placerat mollis quis vitae turpis. Nunc ante leo, rutrum dictum risus sit amet, porta hendrerit elit.
-        </p>
-    </div>
 
-    <div class="content__comment">
-        <h2 class="content__name">Lorena dos Santos</h2>
-        <p class="content__text">
-            Quisque bibendum dolor enim, eu feugiat tellus eleifend maximus. Praesent id euismod ex, in gravida est. Integer nec laoreet quam. Proin blandit purus ligula, eget hendrerit mauris dignissim sodales. Aliquam sit amet facilisis tortor. Ut lobortis, sem quis bibendum commodo, diam felis convallis sem, eu feugiat elit augue egestas mi. Phasellus rutrum turpis ac ligula iaculis, vel dignissim felis ultrices. Vivamus condimentum magna non arcu elementum consequat. Nullam scelerisque nisl placerat pellentesque semper. Pellentesque id iaculis lacus. Ut ut dolor iaculis, congue massa pellentesque, luctus elit. Proin viverra sapien non imperdiet vehicula. Maecenas eu felis odio. Integer eget odio vel felis feugiat ullamcorper. 
-        </p>
-    </div>
-    <!-- <div class="container">
-        <div class="content">
-            <header class="content__header">
-                <div>
-                    <img src="/crud-php/public/assets/crud.png" alt="">
-                    <nav class="content__menu">
-                        <ul class="content__list">
-                            <li class="content__item"><a href="#">Home</a></li>
-                            <li class="content__item"><a href="#">Admin</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-
-            <main class="content__main">
-                <h1>Notice</h1>
-
-                <div class="content__notice">
-                    <h2 class="content__title">Lorem ipsum</h2>
-                    <p class="content__description"> 
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent arcu dui, rhoncus rutrum consectetur porttitor, maximus quis ante. Pellentesque ex arcu, rutrum id scelerisque eget, sollicitudin eu diam. Suspendisse finibus quam ligula, a dignissim ipsum ultricies sed. Praesent ultricies nibh sit amet magna consequat consequat. Mauris a pellentesque nunc, ut pulvinar augue. Fusce fringilla sed felis nec ultricies. Aliquam elit felis, accumsan eu ornare nec, rhoncus nec ante. Aenean tristique lorem ut nisl rhoncus fermentum. Mauris mattis nisi vel nulla dignissim ultrices. Nunc tincidunt dolor velit, a consectetur leo efficitur eu. Vestibulum eget lacus nec odio viverra luctus. Fusce ac urna sit amet erat placerat mollis quis vitae turpis. Nunc ante leo, rutrum dictum risus sit amet, porta hendrerit elit.
-                        <br>
-                        Mauris eget sodales ex, eget tempus leo. Donec scelerisque, turpis non dapibus fringilla, tortor ante finibus tortor, consequat auctor felis est nec ante. Etiam libero libero, pretium eget quam vitae, sollicitudin pulvinar ex. Etiam fringilla justo augue, nec vulputate justo ultricies sit amet. Nullam tincidunt lobortis dui id consequat. Praesent ullamcorper odio mauris, quis tincidunt arcu facilisis nec. Fusce mattis placerat leo, in maximus leo molestie et.
-                        <br>
-                        Aenean ut diam fermentum, tincidunt nibh sed, facilisis orci. In molestie nec augue vel tempor. Vivamus ac risus ipsum. Quisque facilisis elit ut lectus volutpat, in maximus tellus bibendum. Donec eu suscipit massa, in commodo lacus. Duis mollis molestie diam, non pretium odio vulputate eu. Duis ac rutrum tellus. Suspendisse finibus pretium pretium. Proin vitae metus maximus, pulvinar eros ut, bibendum neque. Quisque commodo dignissim massa ac molestie. Donec in nulla luctus, varius mauris eget, luctus dolor.
-                        <br>
-                        Quisque bibendum dolor enim, eu feugiat tellus eleifend maximus. Praesent id euismod ex, in gravida est. Integer nec laoreet quam. Proin blandit purus ligula, eget hendrerit mauris dignissim sodales. Aliquam sit amet facilisis tortor. Ut lobortis, sem quis bibendum commodo, diam felis convallis sem, eu feugiat elit augue egestas mi. Phasellus rutrum turpis ac ligula iaculis, vel dignissim felis ultrices. Vivamus condimentum magna non arcu elementum consequat. Nullam scelerisque nisl placerat pellentesque semper. Pellentesque id iaculis lacus. Ut ut dolor iaculis, congue massa pellentesque, luctus elit. Proin viverra sapien non imperdiet vehicula. Maecenas eu felis odio. Integer eget odio vel felis feugiat ullamcorper. 
-                    </p>
-                </div>
-
-                <h1>Comments</h1>
-
-                <div class="content__comment">
-                    <h2 class="content__name">Vitor Martins Cruz</h2>
-                    <p class="content__text">
-                        Mauris eget sodales ex, eget tempus leo. Donec scelerisque, turpis non dapibus fringilla, tortor ante finibus tortor, consequat auctor felis est nec ante. Etiam libero libero, pretium eget quam vitae, sollicitudin pulvinar ex. Etiam fringilla justo augue, nec vulputate justo ultricies sit amet. Nullam tincidunt lobortis dui id consequat. Praesent ullamcorper odio mauris, quis tincidunt arcu facilisis nec. Fusce mattis placerat leo, in maximus leo molestie et.
-                    </p>
-                </div>
-
-                <div class="content__comment">
-                    <h2 class="content__name">Lucas da Silva</h2>
-                    <p class="content__text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent arcu dui, rhoncus rutrum consectetur porttitor, maximus quis ante. Pellentesque ex arcu, rutrum id scelerisque eget, sollicitudin eu diam. Suspendisse finibus quam ligula, a dignissim ipsum ultricies sed. Praesent ultricies nibh sit amet magna consequat consequat. Mauris a pellentesque nunc, ut pulvinar augue. Fusce fringilla sed felis nec ultricies. Aliquam elit felis, accumsan eu ornare nec, rhoncus nec ante. Aenean tristique lorem ut nisl rhoncus fermentum. Mauris mattis nisi vel nulla dignissim ultrices. Nunc tincidunt dolor velit, a consectetur leo efficitur eu. Vestibulum eget lacus nec odio viverra luctus. Fusce ac urna sit amet erat placerat mollis quis vitae turpis. Nunc ante leo, rutrum dictum risus sit amet, porta hendrerit elit.
-                    </p>
-                </div>
-
-                <div class="content__comment">
-                    <h2 class="content__name">Lorena dos Santos</h2>
-                    <p class="content__text">
-                        Quisque bibendum dolor enim, eu feugiat tellus eleifend maximus. Praesent id euismod ex, in gravida est. Integer nec laoreet quam. Proin blandit purus ligula, eget hendrerit mauris dignissim sodales. Aliquam sit amet facilisis tortor. Ut lobortis, sem quis bibendum commodo, diam felis convallis sem, eu feugiat elit augue egestas mi. Phasellus rutrum turpis ac ligula iaculis, vel dignissim felis ultrices. Vivamus condimentum magna non arcu elementum consequat. Nullam scelerisque nisl placerat pellentesque semper. Pellentesque id iaculis lacus. Ut ut dolor iaculis, congue massa pellentesque, luctus elit. Proin viverra sapien non imperdiet vehicula. Maecenas eu felis odio. Integer eget odio vel felis feugiat ullamcorper. 
-                    </p>
-                </div>
-            </main>
-        </div>
-    </div> -->
 </body> 
 </html>

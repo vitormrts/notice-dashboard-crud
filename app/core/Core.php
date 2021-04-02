@@ -12,10 +12,14 @@ class Core
         $method = 'index';
         
         if (!class_exists($controller)) {
-            $controller = 'ErroController';
+            $controller = 'ErrorController';
         } 
 
-        call_user_func_array(array(new $controller, $method), array());
+        $params = array(
+            "id" => $urlGet["id"] ?? null
+        );
+
+        call_user_func_array(array(new $controller, $method), array_values($params));
     }
 }
 
