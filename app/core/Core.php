@@ -3,14 +3,9 @@
 class Core
 {
     public function start($urlGet) {
-        if (isset($urlGet["page"])) {
-            $controller = ucfirst($urlGet["page"]) . 'Controller';
-        } else {
-            $controller = 'HomeController';
-        }
+        $controller = isset($urlGet["page"]) ? ucfirst($urlGet["page"]) . "Controller" : "HomeController";
+        $method = isset($urlGet["method"]) && method_exists($controller, $urlGet["method"]) ? $urlGet["method"] : 'index'; 
 
-        $method = 'index';
-        
         if (!class_exists($controller)) {
             $controller = 'ErrorController';
         } 

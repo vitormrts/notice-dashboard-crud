@@ -58,6 +58,29 @@ class Notice
         return $notice;
     }
 
+    public function insert($data) {
+        if (empty($data["title"]) || empty($data["description"])) {
+            throw new Exception("Fill in all fields");
+            return false;
+        }
+
+        try {
+            $connection = Connection::getConnection();
+
+            $sql = 'INSERT INTO notices (title, description) VALUES (:title, :description)';
+            $stmt = $connection->prepare($sql);
+            $stmt->bindValue(':title', $data['title']);
+            $stmt->bindValue(':description', $data['description']);
+    
+            if ($stmt->execute()) {
+                return true;
+            }
+        } catch (Exception $e){
+            throw new Exception("Failed to insert notice.");
+        }
+
+    }
+
     public function getId() {
         return $this->id;
     }

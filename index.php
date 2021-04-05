@@ -20,6 +20,7 @@ require_once 'app/models/Comment.php';
 require_once 'app/controllers/HomeController.php';
 require_once 'app/controllers/ErrorController.php';
 require_once 'app/controllers/NoticeController.php';
+require_once 'app/controllers/DashboardController.php';
 
 
 ob_start();

@@ -1,0 +1,51 @@
+.content__create {
+    margin: 1.6rem 0;
+}
+
+.content__create a {
+    font-size: 1.6rem;
+    
+    text-decoration: none;
+    color: #4F4F4F;
+}
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+
+    margin: 0 auto;
+
+    width: 80%;
+}
+
+table tr th {
+    padding: 0.7rem;
+    border: 0.4px solid #4F4F4F;
+
+    background-color: #2D9CDB;
+    color: whitesmoke;
+    font-size: 1.2rem;
+}
+
+#action {
+    width: 90px;
+}
+
+table tr td {
+    padding: 0.9rem;
+    border: 0.4px solid #4F4F4F;
+}
+
+table tr td a {
+
+}
+
+table tr td div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+table tr td a img {
+    width: 25px;
+}
