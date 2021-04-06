@@ -9,8 +9,6 @@
 
     <link rel="stylesheet" href="/public/styles/pages/dashboard.css">
 
-    <link rel="stylesheet" href="/public/styles/components/table.css">
-
     <title>Dashboard</title>
 </head>
 <body>
@@ -21,21 +19,21 @@
 
     <h2 class="content__create"><a href="/?page=dashboard&method=create">Click here to create a new notice</a></h2>
 
-    <table>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th id="action">Action</th>
+    <table class="content__table">
+        <tr class="content__table-row">
+            <th class="content__table-head">Id</th>
+            <th class="content__table-head">Title</th>
+            <th class="content__table-head" id="action">Action</th>
         </tr>
 
         {% for notice in notices %}
-            <tr>
-                <td>{{ notice.getId() }}</td>
-                <td>{{ notice.getTitle() }}</td>
-                <td id="action">
-                    <div>
-                        <a href="#"><img src="/public/assets/edit.svg" alt="Edit Notice"></a>
-                        <a href="#"><img src="/public/assets/trash.svg" alt="Delete Notice"></a>
+            <tr class="content__table-row">
+                <td class="content__table-data">{{ notice.getId() }}</td>
+                <td class="content__table-data">{{ notice.getTitle() }}</td>
+                <td class="content__table-data" id="action">
+                    <div class="content__action">
+                        <a href="/?page=dashboard&method=change&id={{ notice.getId() }}"><img src="/public/assets/edit.svg" alt="Edit Notice"></a>
+                        <a href="/?page=dashboard&method=delete&id={{ notice.getId() }}"><img src="/public/assets/trash.svg" alt="Delete Notice"></a>
                     </div>
                 </td>
             </tr>

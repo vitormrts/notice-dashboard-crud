@@ -1,0 +1,56 @@
+.content__fieldset {
+    border: 0;
+}
+
+.content__input-group {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+}
+
+.content__title {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.content__input {
+    border: 1.2px solid #2D9CDB;
+    border-radius: 5px;
+    padding: 16px;
+
+    width: 100%;
+
+    resize: none;
+}
+
+textarea {
+    height: 20rem;
+    
+}
+
+.content__button-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content__button-group button {
+    margin-top: 2rem;
+
+    padding: 2.4rem 13rem;
+    border: none;
+
+    border-radius: 9px;
+
+    background-color: #2D9CDB;
+
+    color: whitesmoke;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+@media (max-width: 343px) {
+    .content__button-group button {
+        padding: 2rem 11rem;
+    }
+}

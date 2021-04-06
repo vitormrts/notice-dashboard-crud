@@ -9,43 +9,45 @@
     color: #4F4F4F;
 }
 
-table {
+.content__table {
     border-spacing: 0;
     border-collapse: collapse;
 
     margin: 0 auto;
 
     width: 80%;
+    border: 0.4px solid #2D9CDB;
 }
 
-table tr th {
+.content__table-head {
     padding: 0.7rem;
-    border: 0.4px solid #4F4F4F;
+    border-bottom: 0.4px solid #2D9CDB;
 
     background-color: #2D9CDB;
     color: whitesmoke;
     font-size: 1.2rem;
+
+    text-align: start;
 }
 
 #action {
-    width: 90px;
+    width: 5rem;
 }
 
-table tr td {
+.content__table-data {
     padding: 0.9rem;
-    border: 0.4px solid #4F4F4F;
+    border-bottom: 0.4px solid #2D9CDB;
 }
 
-table tr td a {
-
-}
-
-table tr td div {
+.content__action {
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
-table tr td a img {
-    width: 25px;
+.content__action a img {
+    width: 1.7rem;
+}
+
+.content__action a img:first-child {
+    margin-right: 8px;
 }

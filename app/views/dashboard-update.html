@@ -7,23 +7,23 @@
 
     <link rel="stylesheet" href="/public/styles/components/form.css">
 
-    <title>Create Notice</title>
+    <title>Update Notice</title>
 </head>
 <body>
     <div class="content__top">
         <a href="/?page=dashboard"><img src="/public/assets/left-arrow.svg" alt="Back"></a>
-        <h1>Create a new notice</h1>
+        <h1>Update notice</h1>
     </div>
-    <form class="content__form" id="form-notice" action="/?page=dashboard&method=insert" method="POST">
+    <form class="content__form" id="form-notice" action="/?page=dashboard&method=update&id={{ id }}" method="POST">
         <fieldset class="content__fieldset" action="">
             <div class="content__input-group">
                 <label class="content__title" for="title">Title</label>
-                <input class="content__input" type="text" name="title" placeholder="Insert a title.">
+                <input class="content__input" type="text" name="title" value="{{ title }}">
             </div>
 
             <div class="content__input-group">
                 <label class="content__title" for="description">Description</label>
-                <textarea class="content__input" type="text" placeholder="Insert a description." name="description"></textarea>
+                <textarea class="content__input" type="text" name="description">{{ description }}</textarea>
             </div>
 
             <div class="content__button-group">

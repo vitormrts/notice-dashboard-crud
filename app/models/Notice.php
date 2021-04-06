@@ -78,7 +78,46 @@ class Notice
         } catch (Exception $e){
             throw new Exception("Failed to insert notice.");
         }
+    }
 
+    public function update($id, $data) {
+        if (empty($data["title"]) || empty($data["description"])) {
+            throw new Exception("You cannot leave an empty field.");
+            return false;
+        }
+
+        try {
+            $connection = Connection::getConnection();
+            $sql = 'UPDATE notices SET title = :title, description = :description WHERE id = :id';
+        
+            $stmt = $connection->prepare($sql);
+            $stmt->bindValue(':title', $data['title']);
+            $stmt->bindValue(':description', $data['description']);
+            $stmt->bindValue(':id', $id);
+    
+            if ($stmt->execute()) {
+                return true;
+            }
+        } catch (Exception $e) {
+            throw new Exception("It was not possible to update the notice.");
+        }
+    }
+
+    public function delete($id) {
+        try {
+            $connection = Connection::getConnection();
+
+            $sql = "DELETE FROM notics WHERE id = :id";
+
+            $stmt = $connection->prepare($sql);
+            $stmt->bindValue(':id', $id);
+
+            if ($stmt->execute()) {
+                return true;
+            }
+        } catch (Exception $e) {
+            throw new Exception("It was not possible to delete the notice.");
+        }
     }
 
     public function getId() {

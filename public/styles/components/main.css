@@ -49,3 +49,17 @@
         width: 96%;
     }
 }
+
+@media (max-width: 400px) {
+    .content__main {
+        padding: 0 10px;
+    }
+
+    .content__main h1 {
+        font-size: 2.4rem;
+    }
+
+    .content__top a {
+        width: 20px;
+    }
+}
