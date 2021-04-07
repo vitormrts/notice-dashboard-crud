@@ -36,9 +36,41 @@
 * ✔️ MySQL
 
 ## ℹ️ How To Use
+### 1. Getting Started
 To modify (locally) this project, you will need [PHP](https://www.php.net/downloads.php) and [MySQL](https://www.mysql.com/downloads/) installed on your computer.
 
-> PS: It is necessary to create a MySQL database to run the project locally. For this, I recommend that you use [PhpMyAdmin](https://www.phpmyadmin.net/).
+### 2. Configuring Your Database
+With these tools in hand, it is necessary to create a database. To do this, follow the steps below:
+```sh
+# Open your MySQL
+$ mysql -u root -p
+
+# Create a database
+mysql> CREATE DATABASE name_of_database DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+
+# Change to created database
+mysql> USE name_of_database
+
+# Create comments table
+mysql> CREATE TABLE IF NOT EXISTS comments (
+    id INT NOT NULL AUTO_INCREMENT,
+    msg TEXT NOT NULL,
+    id_notice INT NOT NULL,
+    PRIMARY KEY (id)
+) DEFAULT CHARSET = utf8;
+
+# Create notices table
+mysql> CREATE TABLE IF NOT EXISTS notices (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(30) NOT NULL,
+    description TEXT NOT NULL,
+    PRIMARY KEY (id)
+) DEFAULT CHARSET = utf8;
+```
+
+After this, you will need to connect the database by changing the data in [Env.php](https://github.com/vitormrts/notice-dashboard-crud/blob/master/app/config/Env.php).
+
+### 3. Cloning And Running The Project
 
 ```sh
 # Clone this repository in a location where the local server can run it.
@@ -47,8 +79,6 @@ $ git clone https://github.com/vitormrts/notice-dashboard-crud
 # Go to the repository cloned
 $ cd notice-dashboard-crud
 ```
-
-After this, you will need to connect the database by changing the data in [Env.php](https://github.com/vitormrts/notice-dashboard-crud/blob/master/app/config/Env.php).
 
 Done! Now you can open the app.
 
@@ -63,7 +93,7 @@ To contributing to this project, follow the steps bellow.
 5. Open a Pull Request
 
 ## 📝 License
-This project is under the MIT license. See the [LICENSE](https://github.com/vitormrts/authentication-system/blob/master/LICENSE) file for more details.
+This project is under the MIT license. See the [LICENSE](https://github.com/vitormrts/notice-dashboard-crud/blob/master/LICENSE) file for more details.
 
 ---
 
