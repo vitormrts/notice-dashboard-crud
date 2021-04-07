@@ -6,7 +6,7 @@
     background-color: rgba(255, 255, 255, 0.705);
     box-shadow: 0px 5px 10px rgb(219, 219, 219);
 
-    padding: 0 4rem;
+    padding: 4rem 4rem;
     
 }
 
@@ -17,17 +17,25 @@
 }
 
 .content__top a {
-    margin-top: 3.5rem;
     margin-right: 1rem;
-    width: 30px;
+    width: 1.8rem;
+
+    transition: 0.4s;
+}
+
+.content__top a:hover {
+    transform: scale(1.1);
 }
 
 .content__main h1 {
     color: #2D9CDB;
 
-    margin-top: 3.5rem;
-
     font-size: 3rem;
+}
+
+img#newspaper {
+    width: 1.8rem;
+    margin-right: 1rem;
 }
 
 @media (max-width: 1223px) {
@@ -57,9 +65,5 @@
 
     .content__main h1 {
         font-size: 2.4rem;
-    }
-
-    .content__top a {
-        width: 20px;
     }
 }

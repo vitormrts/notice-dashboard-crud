@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="/public/styles/components/notice.css">
     <link rel="stylesheet" href="/public/styles/components/comment.css">
+    <link rel="stylesheet" href="/public/styles/components/form.css">
 
     <title>Notice</title>
 </head>
@@ -25,7 +26,29 @@
         </p>
     </div>
 
-    <h1>Comments</h1>
+    <h1 id="comments">Comments</h1>
+
+    <div class="content__insert-comment">
+        <form class="content__form" id="form-comment" action="/?page=notice&method=addComment&id={{ id }}" method="POST">
+            <fieldset class="content__fieldset">
+                <div class="content__input-group">
+                    <label class="content__title" for="name">Name</label>
+                    <input class="content__input" name="name" placeholder="Write your name." type="text">
+                </div>
+
+                <div class="content__input-group">
+                    <label class="content__title" for="msg">Comment</label>
+                    <textarea id="textarea-comment" class="content__input"  name="msg" placeholder="Write a comment." ></textarea>
+                </div>
+
+                <div class="content__button-group">
+                    <button type="submit" form="form-comment">
+                        Submit
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
 
     {% if comments == 'This notice has no comments.' %}
         <p>This notice has no comments.</p>

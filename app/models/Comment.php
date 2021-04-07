@@ -24,6 +24,29 @@ class Comment
         return $comments;
     }
 
+    public function insert($id_notice, $data) {
+        if (empty($data['name']) || empty($data['msg']) || !$id_notice ) {
+            throw new Exception("Fill in all fields.");
+        }
+
+        try {
+            $connection = Connection::getConnection();
+
+            $sql = 'INSERT INTO comments (name, msg, id_notice) VALUES (:name, :msg, :id_notice)';
+
+            $stmt = $connection->prepare($sql);
+            $stmt->bindValue(':id_notice', $id_notice);
+            $stmt->bindValue(':name', $data['name']);
+            $stmt->bindValue(':msg', $data['msg']);
+
+            if ($stmt->execute()) {
+                return true;
+            }
+        } catch (Exception $e) {
+            throw new Exception("It was not possible to add a comment.");
+        }
+    }
+
     public function getId($id) {
         return $this->id;
     }

@@ -36,6 +36,12 @@
     list-style: none;
     margin-top: 1.2rem;
     font-size: 1.4rem;
+
+    transition: 0.3s;
+}
+
+.content__item:hover {
+    transform: scale(1.1);
 }
 
 .content__item:not(:first-child) {
@@ -47,6 +53,12 @@
     color: white;
 
     cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.content__item a:hover {
+    color: rgb(219, 219, 219);
 }
 
 @media (max-width: 1223px) {

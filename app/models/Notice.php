@@ -110,7 +110,7 @@ class Notice
             $sql = "DELETE FROM notics WHERE id = :id";
 
             $stmt = $connection->prepare($sql);
-            $stmt->bindValue(':id', $id);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
             if ($stmt->execute()) {
                 return true;

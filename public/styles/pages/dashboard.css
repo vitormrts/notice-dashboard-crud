@@ -39,6 +39,10 @@
     border-bottom: 0.4px solid #2D9CDB;
 }
 
+.content__table-data:first-child {
+    font-weight: bold;
+}
+
 .content__action {
     display: flex;
     align-items: center;
@@ -46,6 +50,12 @@
 
 .content__action a img {
     width: 1.7rem;
+
+    transition: 0.1s;
+}
+
+.content__action a img:hover {
+    transform: scale(1.1);
 }
 
 .content__action a img:first-child {
