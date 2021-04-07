@@ -10,23 +10,23 @@
 
 ## 🎥 Demo
 <div align="center">
-    <img src="public/demo/home.png" hspace="20" vspace="10" width="60%"/> 
+    <img src="public/demo/home.png" hspace="20" vspace="20" width="60%"/> 
 </div>
 
 <div align="center">
-    <img src="public/demo/notice.png" hspace="20" vspace="10" width="60%"/> 
+    <img src="public/demo/notice.png" hspace="20" vspace="20" width="60%"/> 
 </div>
 
 <div align="center">
-    <img src="public/demo/dashboard.png" hspace="20" vspace="10" width="60%"/> 
+    <img src="public/demo/dashboard.png" hspace="20" vspace="20" width="60%"/> 
 </div>
 
 <div align="center">
-    <img src="public/demo/create-notice.png" hspace="20" vspace="10" width="60%"/> 
+    <img src="public/demo/create-notice.png" hspace="20" vspace="20" width="60%"/> 
 </div>
 
 <div align="center">
-    <img src="public/demo/update-notice.png" hspace="20" vspace="10" width="60%"/> 
+    <img src="public/demo/update-notice.png" hspace="20" vspace="20" width="60%"/> 
 </div>
 
 ## 🚀 Technologies
